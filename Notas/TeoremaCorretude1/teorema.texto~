@@ -1,0 +1,21 @@
+Teorema da corretude:
+fizão|-fizinho => fizão ||-fizinho
+Prova: Por indução no comprimento da indução:
+Base da indução: n=1 Temos qe fizinho{{1}} é um axioma ou fizinho {pertence} fizão.
+
+Caso I: fizinho é um axioma.
+Se fizinho é um axioma, então {{vazio}}||fizinho e como {{vazio}}{{contido}}fizão => fizão||-fizinho. Isso se configura no teorema da monotocidade:
+Se psi||-fizinho e psi{{contido}}fizão =>fizão||-fizinho.
+	prova:
+	Suponha que fizão n||-fizinho => existe valoração v, tal que v|= fizão e v n|= fizinho.
+	Então v|= psi e v n|=fizinho.
+	Mas como existe v tal que v|= psi e v n|= fizinho então temos uma contradição.
+	Logo fizão||-fizinho.
+Caso II: fizinho{{1}}{pertence} 
+ Se fizinho{{1}}{pertence}fizão=> fizão||-fizinho.Pelo teorema da reflexividade.
+
+Passo da indução: Para n+1.
+Obs: è importante lembrar que o teorema da corretude é válido para todas as fórmulas fizinho{{k}}, tal que k<n+1. Ou seja, fizão|-fizinho{{1}},...,fizão|-fizinho{{n}} => fizão||-fizinho{{1}},...,fizão||-fizinho{{n}}.
+ Caso I- Se fizinho é um axioma, então fizão||-fizinho(Mesma idéia da prova anterior).
+ Caso II- Se fizinho{pertence}fizão, então fizão||-fizinho.
+ Caso III-  	

@@ -1,0 +1,34 @@
+\documentclass[12pt]{report}
+%--------------------Pacotes-------------------------------
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{amsthm,amsfonts}
+\usepackage{amssymb}
+%---------------------Definições----------------------------
+\setlength{\textwidth}{17 cm}
+\setlength{\textheight}{20 cm}
+\evensidemargin 0 cm
+\oddsidemargin 0 cm
+\setlength\parskip{4 pt}  
+%------------------------------------------------------------
+\begin{document}
+	
+\begin{quote} 
+Lema: Teorema da dedução: $\phi$ $\cup$ \{$\varphi$\} implica em $\phi$ $\vdash$ $\varphi$$\rightarrow$ $\Psi$.\end{quote}
+\begin{proof} Por indução do comprimento da derivação de $\Psi$ a apartir de $\phi$ $\cup$ $\varphi$.\\
+Base: n=1. Então $\Psi$ $\in$ $\phi$ $\cup$ \{$\varphi$\} ou $\varphi$ é axioma. Se $\Psi$$=$ $\varphi$, então $\phi$ $\vdash$ $\varphi$ $\rightarrow$ $\Psi$ por c) do lema anterior. Se $\Psi$ $\in$ $\phi$ ou $\Psi$ é axioma, então $\phi$ $\vdash$ $\Psi$. Por  b) do lema anterior , $\phi$ $\vdash$ $\Psi$ $\rightarrow$ $\varphi$ $\rightarrow$ $\Psi$. Por modus ponens: $\phi$ $\vdash$ $\varphi$ $\rightarrow$ $\Psi$.\\
+Passo da indução: Supomos que a derivação tem comprimento n+1. Podemos supor que o ultimo passo da derivação foi aplicado o M.P. Isto é, $\phi$$\cup$$\varphi$ $\vdash$ $\chi$, $\phi$ $\cup$\{$\varphi$\}$\vdash$$\chi$ $\rightarrow$ $\psi$. As derivações de $\zeta$ e $\zeta$ $\rightarrow$$\Psi$ tem comprimento $\leq$ n. Por hipótese da indução, $\phi$$\vdash$ $\varphi$ $\rightarrow$ $\zeta$ e $\phi$ $\vdash$ $\varphi$$\rightarrow$($\zeta$$\rightarrow$$\psi$). Aplicando duas vezes o modus ponens e A1 resultam em : $\phi$ $\vdash$ $\varphi$ $\rightarrow$ $\psi$.\end{proof}
+\begin{quote} Lema: $\vdash$ $\neg$$\neg$$\varphi$ $\rightarrow$$\varphi$.\end{quote}
+\begin{proof} Por (A3) e (A4) e M.P,$\neg$$\neg$$\varphi$ $\land$ $\neg$$\varphi$ $\vdash$ $\neg$$\varphi$,$\neg$$\neg$$\varphi$ $\land$ $\neg$$\varphi$ $\vdash$$\neg$$\neg$$\varphi$. Seja $\tau$ qualquer fórmula tal que $\vdash$$\tau$. Por c) : $\phi$ $\vdash$ $\psi$ e $\phi$ $\vdash$$\neg$$\psi$ $\Longrightarrow$ em $\phi$ $\vdash$$\varphi$($\varphi$ qualquer fórmula). Por a): $\vdash$ $\tau$ $\rightarrow$$\neg$($\neg$$\neg$$\varphi$ $\land$ $\neg$ $\varphi$)($=$$\neg$$\neg$$\varphi$$\rightarrow$ $\varphi$).\end{proof}
+\begin{quote} Lema: $\phi$$\cup$\{$\Psi$\} $\vdash$ $\varphi$ e $\phi$$\cup$\{$\neg$$\Psi$\}$\vdash$ $\varphi$ $\Longrightarrow$ $\phi$$\vdash$$\varphi$.\end{quote}
+\begin{proof} As hipóteses impliam em $\phi$$\cup$\{$\psi$\} $\vdash$$\neg$$\neg$$\varphi$ e $\phi$ $\cup$\{$\neg$$\psi$\}$\vdash$$\neg$$\neg$$\varphi$. Por d). Pelo teorema da dedução, $\phi$ $\vdash$$\psi$ $\rightarrow$$\neg$$\neg$$\varphi$, $\phi$ $\vdash$$\neg$$\psi$$\rightarrow$$\neg$$\neg$$\varphi$. Por a), $\phi$ $\vdash$ $\neg$$\psi$, $\phi$ $\vdash$$\neg$$\varphi$$\rightarrow$$\neg$$\neg$$\psi$. Então  $\phi$\{inido\}\{$\neg$$\varphi$\} $\vdash$$\neg$$\psi$,$\phi$ $\cup$\{$\neg$$\varphi$\}$\vdash$$\neg$$\neg$$\psi$. Por e), $\phi$ $\cup$\{$\neg$$\varphi$\}$\vdash$$\neg$$\tau$, onde $\tau$ é fórmula tal que $\vdash$ $\tau$.Por c) $\neg$$\psi$ $\rightarrow$ $\neg$$\neg$$\psi$ $\rightarrow$$\neg$$\tau$. Logo, $\phi$ $\vdash$ $\neg$$\varphi$ $\rightarrow$ $\neg$$\tau$(teorema da dedução). Por a), $\phi$  $\vdash$ $\tau$ $\rightarrow$$\neg$$\neg$$\varphi$. Por M.P: $\phi$ $\neg$$\neg$$\varphi$. Pelo teorema anterior : $\phi$$\vdash$$\varphi$.\end{proof}
+Obs: $\vdash$ satisfaz as seguintes regras(onde uma regra tem a forma $ \frac {\phi \vdash \varphi_{1},...,\phi_{n} \vdash \varphi_{n}}{\phi\vdash\varphi}$, temos tal regra como ''se $\phi$$_{1}$$\vdash$$\varphi$$_{1}$,...,$\phi$$_{n}$ $\vdash$$\varphi$$_{n}$, então $\phi$ $\vdash$ $\varphi$'').\\
+(R1) $\frac{}{\varphi\vdash\varphi}$.\\
+(R2) $\frac{\phi \vdash \varphi}{\phi'\vdash \varphi}$ se $\phi$ $\subseteq$ $\phi$'.\\
+(R3) $ \frac{\phi \vdash \varphi,\phi \vdash \psi}{\phi \vdash \varphi \land\psi}$. Por (A2).\\
+(R4)$ \frac {\phi \vdash \phi \land \psi}{\phi \vdash \varphi}$.Por (A3).\\
+(R5)$ \frac {\phi \vdash \phi \land \psi}{\phi\vdash \psi }$.Por (A4).\\
+(R6)$ \frac {\phi \vdash \varphi, \phi \vdash \neg \varphi}{\phi \vdash \psi }$. Por e).\\
+(R7)$ \frac {\phi \cup {\varphi} \vdash \psi,\phi \cup {\neg\varphi} \vdash \psi}{\phi \vdash \psi}$. Pelo ultimo lema.\\
+\end{document}

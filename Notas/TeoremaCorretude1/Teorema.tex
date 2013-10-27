@@ -1,0 +1,45 @@
+\documentclass[12pt]{report}
+%--------------------Pacotes-------------------------------
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{amsthm,amsfonts}
+\usepackage{amssymb}
+%---------------------Definições----------------------------
+\setlength{\textwidth}{17 cm}
+\setlength{\textheight}{20 cm}
+\evensidemargin 0 cm
+\oddsidemargin 0 cm
+\setlength\parskip{4 pt} 
+\title{Teorema da corretude}
+%\newtheorem{Corretude}
+\begin{document}
+\maketitle
+\begin{quote}
+\indent Definição: $\phi$ $\vdash$ $\varphi$ $:<=>$ Existe uma dedução $\varphi$$_{1,...}$$\varphi$$_{n}$ tal que $\varphi$$_{n}$$=$$\varphi$ e que para $\varphi$$_{i}$(1 $\leq$ i $\leq$ n) 
+temos que $\varphi$$_{i}$ é um axioma ou $\varphi$$_{i}$ {$\in$} $\phi$ ou $\varphi$$_{i}$ é resultado do modus ponens aplicado à fórmulas anteriores. 
+\end{quote}
+\indent Teorema da corretude.
+\begin{quote}
+\indent $\phi$ $\vdash$ $\varphi$ $\rightarrow$ $\phi$ $\Vdash$ $\varphi$
+\end{quote}
+\begin{proof}
+\indent Por indução no comprimento da indução:\\
+\indent Base da indução: n=1 Temos que $\varphi$$_{1}$ é um axioma ou $\varphi$$_{1}$ $\in$ $\phi$.\\
+\indent Caso I : $\varphi$$_{1}$ é um axioma.\\
+\indent Se $\varphi$$_{1}$ é um axioma, então $\oslash$ $\Vdash$ $\varphi$$_{1}$ e como $\oslash$ $\subseteq$ $\phi$ $\Longrightarrow$ $\phi$ $\Vdash$$\varphi$$_{1}$. Isso se configura no teorema da monotocidade:\\
+\indent Se $\psi$ $\Vdash$$\varphi$ e $\psi$$\subseteq$$\phi$ $\rightarrow$ $\phi$ $\Vdash$$\varphi$.\\
+\indent	prova:\\
+\indent	Suponha que $\phi$ $\nVdash$$\varphi$ $\Longrightarrow$ existe valoração v, tal que v $\vDash$ $\phi$ e v $\nvDash$ $\varphi$.\\
+\indent	Então v $\vDash$ $\psi$ e v $\nvDash$ $\varphi$.\\
+\indent	Mas como existe v tal que v $\vDash$ $\psi$ e v $\nvDash$ $\varphi$ então temos uma contradição.\\
+\indent	Logo $\phi$ $\Vdash$ $\varphi$.\\
+\indent Caso II: $\varphi$$_{1}$ $\in$ $\phi$\\ 
+\indent Se $\varphi$ $_{1}$ $\in$$\phi$ $\rightarrow$ $\phi$ $\Vdash$$\varphi$.Pelo teorema da reflexividade.\\
+\indent Passo da indução: Para n+1.\\
+\indent Obs: É importante lembrar que o teorema da corretude é válido para todas as fórmulas $\varphi$$_{k}$, tal que k$<n+1$. Ou seja, $\phi$$\vdash$$\varphi$$_{1}$,...,$\phi$$\vdash$$\varphi$$_{n}$ $\Longrightarrow$ $\phi$ $\Vdash$$\varphi$$_{1}$,...,$\phi$$\vdash$$\varphi$$_{n}$.\\
+\indent Caso I - Se $\varphi$ é um axioma, então $\phi$ $\vdash$ $\varphi$(Mesma idéia da prova anterior).\\
+\indent Caso II - Se $\varphi$ $\in$ $\phi$, então $\phi$ $\vdash$ $\varphi$.\\
+\indent Caso III - Se $\phi$ $\vdash$ $\varphi$$_{k}$,$\phi$ $\vdash$ $\varphi$ $_{m}$,tal que $1< m,k,< n+1$, e $\varphi$$_{m}$:= $\varphi$$_{k}$ $\rightarrow$ $\varphi$, pela regra do modus ponens temos que $\phi$ $\vdash$ $\varphi$.\\
+\end{proof} 
+\end{document}

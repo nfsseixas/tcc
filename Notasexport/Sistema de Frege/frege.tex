@@ -1,0 +1,95 @@
+\documentclass[12pt]{report}
+%--------------------Pacotes-------------------------------
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{amsthm,amsfonts}
+\usepackage{amssymb}
+%---------------------Definições----------------------------
+\setlength{\textwidth}{17 cm}
+\setlength{\textheight}{20 cm}
+\evensidemargin 0 cm
+\oddsidemargin 0 cm
+\setlength\parskip{4 pt}  
+%------------------------------------------------------------
+\title{Sistema de Frege}
+\begin{document}
+\maketitle
+A primeira formulação da lógica proposicional como o cálculo formal se deve a G.Frege(1879). Frege usou o seguinte sistema de axiomas:\\
+p$\rightarrow$(q$\rightarrow$p).\\
+(s$\rightarrow$(p$\rightarrow$q))$\rightarrow$((s$\rightarrow$p)$\rightarrow$(s$\rightarrow$q)).\\
+(p$\rightarrow$(q$\rightarrow$r))$\rightarrow$(q$\rightarrow$(p$\rightarrow$r))\\
+(p$\rightarrow$q)$\rightarrow$($\neg$q$\rightarrow$$\neg$p).\\
+Eukasiewicz simplificou reduzindo para 3 axiomas:
+p$\rightarrow$(q$\rightarrow$p).\\
+(s$\rightarrow$(p$\rightarrow$q))$\rightarrow$((s$\rightarrow$p)$\rightarrow$(s$\rightarrow$q)).\\
+($\neg$p$\rightarrow$$\neg$q) $\rightarrow$(q$\rightarrow$p).\\
+O nosso sistema é o seguinte:
+(A1) ($\varphi$ $\rightarrow$ $\psi$ $\rightarrow$$\chi$) $\rightarrow$ ($\varphi$$\rightarrow$$\psi$)$\rightarrow$($\varphi$$\rightarrow$$\chi$).\\
+(A2) $\varphi$ $\rightarrow$$\psi$ $\rightarrow$$\varphi$.\\
+(A3)$\neg$$\varphi$$\rightarrow$$\varphi$ $\rightarrow$$\psi$.\\
+(A4) ($\varphi$$\rightarrow$$\psi$)$\rightarrow$($\neg$$\varphi$$\rightarrow$$\psi$)$\rightarrow$$psi$.\\
+Base de conectivos {$\rightarrow$,$\neg$}.\\
+Regra de inferência: Modus ponens.\\
+Obs: $\vdash$ é definido como sempre.
+\begin{quote}
+Lema 1: $\vdash$$\varphi$ $\rightarrow$ $\varphi$, isto é, $\varphi$ $\rightarrow$ $\varphi$ é um teorema.
+\end{quote}.
+\begin{proof}
+($\varphi$($\varphi$ $\rightarrow$ $\varphi$) $\rightarrow$ $\varphi$) implica ( $\varphi$ $\rightarrow$ $\varphi$ $\rightarrow$$\varphi$)(A1) 1\\
+$\varphi$ $\rightarrow$($\varphi$ $\rightarrow$ $\varphi$) $\rightarrow$ $\varphi$.(A2) 2\\
+($\varphi$ $\rightarrow$ $\varphi$ $\rightarrow$ $\varphi$)$\rightarrow$($\varphi$ $\rightarrow$ $\varphi$), por M.P 1,2.   3\\
+$\varphi$ $\rightarrow$ $\varphi$$\rightarrow$$\varphi$. (A2)  4\\
+$\varphi$ $\rightarrow$ $\varphi$ M.P 3,4    5\\
+\end{proof}
+\begin{quote} Definição: \\
+$\phi$ é consistente se existe $\varphi$ tal que $\phi$ $\nvdash$$\varphi$ \\
+$\phi$ é inconsistente se existe $\phi$ $\vdash$ $\varphi$ para toda $\varphi$ \\
+$\phi$ é maximalmente consistente se $\phi$ é consistente e $\phi$ $\cup$ \{$\varphi$\} é inconsistente para qualquer $\varphi$ $\in$ FORM – $\phi$.\\
+Obs: I – $\phi$ é inconsistente $\leftrightarrow$ $\phi$ $\vdash$ $\bot$.\\
+II – $\phi$ é consistente $\leftrightarrow$ $\phi$ $\nvdash$ $\bot$ onde $\bot$$:=$ $\neg$($\varphi$ $\rightarrow$ $\varphi$). Mais precisamente, $\bot$ $:=$$\neg$(p$_{0}$$\rightarrow$p$_{0}$).
+\end{quote}
+\begin{proof}
+I: '' $\Longrightarrow$'' é trivial.\\
+''$\Longleftarrow$''\\
+Seja $\phi$ $\vdash$ $\bot$. Isto é, $\phi$ $\vdash$ $\neg$(p$_{0}$$\rightarrow$p$_{0}$). Por lema 1, $\phi$ $\vdash$ (p$_{0}$$\rightarrow$p$_{0}$).\\
+Por (A3), $\phi$ $\vdash$ $\rightarrow$ (p$_{0}$$\rightarrow$p$_{0}$)$\rightarrow$ $\psi$.\\
+Por M.P $ \frac {\neg( p_{0}\rightarrow p_{0})  \neg(p_{0}\rightarrow p_{0})\rightarrow(p_{0}\rightarrow p_{0}) \rightarrow \psi} {(p_{0}\rightarrow p_{0})\rightarrow \psi}$.\\
+Por M.P $ \frac {(p_{0} \rightarrow p_{0})  (p_{0} \rightarrow p_{0}) \rightarrow \psi} {\psi} $.\\
+\textbf{Exercício. Provar o II. É análogo!}.\\
+\end{proof}
+\begin{quote}
+Lema 2: Teorema da dedução. $\phi$ $\cup$ \{ $\varphi$\} $\vdash$ $\psi$ $\Longrightarrow$ $\phi$ $\vdash$ $\varphi$ $\rightarrow$ $\psi$. \textbf{Exercício}
+\end{quote}
+
+\begin{quote}
+Lema 3: I – $\phi$ $\vdash$ $\varphi$ $\leftrightarrow$ fizao $\cup$ \{ $\neg$$\varphi$\} $\vdash$ $\bot$.\\
+II – $\phi$ $\vdash$ $\neg$$\varphi$ $\leftrightarrow$ $\phi$ $\cup$ \{$\varphi$\} $\vdash$ $\bot$\\.
+\end{quote}
+
+\begin{proof}
+I: $\phi$ $\vdash$ $\varphi$ $\Longrightarrow$ $\phi$ $\cup$ \{$\neg$$\varphi$\} $\vdash$ $\varphi$.Também : $\phi$ $\cup$ \{$\neg$$\varphi$\} $\vdash$ $\neg$$\varphi$.\\
+(A3): $\phi$$\cup$ \{$\neg$$\varphi$\}$\vdash$$\neg$$\varphi$$\rightarrow$$\varphi$$\rightarrow$$\bot$\\
+2x M.P $\phi$ $\cup$ \{$\neg$$\varphi$\}$\vdash$$\bot$
+$\phi$ $\cup$ \{$\neg$$\varphi$\} $\vdash$ $\bot$ $\Longrightarrow$ $\phi$ $\cup$ \{$\neg$$\varphi$\} $\vdash$ $\varphi$.(Obs.Anterior).\\
+$\phi$$\vdash$$\neg$$\varphi$$\rightarrow$$\varphi$.(Teorema da dedução).\\
+$\phi$$\vdash$ $\varphi$$\rightarrow$$\varphi$. (Lema 1)\\
+$\phi$ $\vdash$ $\varphi$ (Por A4(com $\varphi$ $=$ $\psi$) e 2x M.P).\\
+II - \textbf{exercício}.\\
+\end{proof}
+
+\begin{quote}
+Lema 4:(Teorema de Lindenbaum). Um conjunto consistente tem uma extensão maximalmente consistente.
+\end{quote}
+
+\begin{proof}
+Seja p$_{0}$,p$_{1}$,p$_{2}$,..., uma enumeração de FORM. Seja $\phi$ consistente. Construímos  uma cadeia fizao$=$ $\phi$$_{0}$, $\leq$$\phi$$_{1}$, $\leq$,...,$\phi$$_{n}$, $\leq$... tal que cada $\phi$$_{n}$ é consistente e $\phi$* $:=$ $\cup$$\phi$$_{n}$,n$\in$N é maximalmente consistente, $\phi$$\subseteq$$\phi$*.\\
+$\phi$$_{0}$:= $\phi$. Se $\phi$$_{n}$ é definido para n$\in$N, então definimos: $\phi$$_{n+1}$:= $\phi$$_{n}$ $\cup$\{$\varphi$$_{n}$\}, se $\phi$$_{n}$ é consistente. $\phi$$_{n}$, c.c.\\
+Obviamente, cada $\phi$$_{n}$ é consistente, n=0,1,... $\phi$* é maximalmente consistente.\\
+$\phi$* é consistente se não for consistente, logo $\phi$* $\vdash$$\bot$. Pela finitude de $\vdash$ existe um subconjunto finito $\Delta$ $\subseteq$ $\phi$ tal que $\Delta$ $\vdash$$\bot$. Mas $\Delta$ $\subseteq$$\phi$$_{i}$ para um i$\in$N $\Longrightarrow$ $\varphi$$_{i}$ $\vdash$ $\bot$ contradição!\\
+$[$$\Delta$ $=$ \{ $\psi$$_{1}$,...,$\psi$$_{n}$ \} $\Delta$ $\bot$ $\cup$ $\phi$ $_{n}$ $\Longrightarrow$ $psi$$_{1}$$\in$ $phi$$_{i1}$,$psi$$_{2}$$\in$ $phi$$_{i2}$,...,$psi$$_{m}$$\in$ $phi$$_{im}$ $\Longrightarrow$ $\Delta$ $\subseteq$ $\phi$$_{i}$, onde n$\in$N, i$=$ max \{i$_{i1}$,...,i$_{im}$\}.\\
+$\phi$* é consistente. $\phi$ é maximalmente consistente.\\
+Supondo que não, então $\phi$* $\cup$ \{$\varphi$\} é consistente para um $\varphi$ $\in$ FORM-$\phi$*. Seja $\varphi$=$\varphi$$_{n}$ na enumeração de fórmulas. Pela construção, $\phi$$_{n}$ $\cup$ \{$\varphi$$_{n}$\} é consistente. Logo, $\varphi$$_{n}$$\in$ $\phi$$_{n+1}$ $\subseteq$$\phi$* é contradição.
+\end{proof}
+	
+\end{document}

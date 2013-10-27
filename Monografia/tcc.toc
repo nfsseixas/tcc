@@ -1,0 +1,4 @@
+\select@language {brazil}
+\contentsline {chapter}{\numberline {1}L\IeC {\'o}gica Modal}{2}
+\contentsline {section}{\numberline {1.1}Introdu\IeC {\c c}\IeC {\~a}o}{2}
+\contentsline {section}{\numberline {1.2}T\IeC {\'\i }tulo aqui2}{3}

@@ -1,0 +1,38 @@
+\documentclass[12pt]{report}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{amsthm,amsfonts}
+\setlength{\textwidth}{17 cm}
+\setlength{\textheight}{20 cm}
+\evensidemargin 0 cm
+\oddsidemargin 0 cm
+\setlength\parskip{4 pt} 
+\title{Finitude}
+
+
+\begin{document}
+\maketitle{}
+\indent Se $\phi$ $\vdash$ $\varphi$, então existe um $\phi$$_{f}$($\delta$) $\subseteq$ $\phi$, $\phi$$_{f}$ finito, tal que 
+$\phi$$_{f}$ $\vdash$ $\varphi$.
+\begin{proof} \indent Indução no comprimento da derivação $\varphi$$_{1}$,...,$\varphi$$_{n}$ de $\varphi$ apartir de $\phi$.
+Base: n=1.  Então $\varphi$ $\in$ $\phi$ ou $\varphi$ é um axioma. Se $\varphi$ $\in$ $\phi$, então {$\varphi$} $\vdash$
+$\varphi$ e {$\varphi$} $\subseteq$ $\phi$, {$\varphi$} é finito. Se $\varphi$ é um axioma, então $\oslash$ $\vdash$ $\varphi$, $\oslash$ $\subseteq$ $\phi$.\\
+ Passo indutivo. Seja $\varphi$$_{1}$,...,$\varphi$$_{n}$,$\varphi$$_{n+1}$ uma derivação de $\varphi$ apartir de $\phi$. Se $\varphi$$_{n+1}$ é um axioma
+ou $\varphi$$_{n+1}$ $\in$, então podemos argumentar, como na base. Supomos $\varphi$$_{i}$,$\varphi$$_{i}$ $\rightarrow$ $\varphi$$_{n+1}$ $\Longrightarrow$ $\varphi$$_{n+1}$ por modus ponens.
+Pela H], existem $\delta$$_{1}$ e $\delta$$_{2}$ $\subseteq$ $\phi$ tal que $\delta$$_{1}$ e $\delta$$_{2}$ são finitos. E $\delta$$_{1}$ $\vdash$ $\varphi$$_{i}$ e $\delta$$_{2}$ $\vdash$ $\varphi$$_{i}$ $\rightarrow$ $\varphi$$_{n+1}$.
+Mas então $\delta$$_{1}$ $\cup$ $\delta$$_{2}$ é finito e $\delta$$_{1}$ $\cup$ $\delta$$_{2}$ $\subseteq$ $\phi$. E $\delta$$_{1}$ $\cup$ $\delta$$_{2}$ $\vdash$ $\varphi$$_{i}$, $\delta$$_{1}$ $\cup$ $\delta$$_{2}$ $\vdash$ $\varphi$$_{i}$ $\rightarrow$ $\varphi$$_{n+1}$.
+Isto é, contém derivações $\psi$$_{1}$,...,$\psi$$_{i}$$=$$\varphi$$_{i}$ e $\zeta$$_{1}$,...,$\zeta$$_{k}$$=$ $\varphi$$_{i}$$\rightarrow$$\varphi$$_{n+1}$ apartir de $\delta$$_{1}$ $\cup$ $\delta$$_{2}$. Juntando estas duas derivações e aplicando modus ponens 
+resulta numa derivação $\psi$$_{1}$,...,$\psi$$_{n}$, $\zeta$$_{1}$,...,$\zeta$$_{k}$, $\varphi$$_{n+1}$ apartir de $\delta$$_{1}$ $\cup$ $\delta$$_{2}$. $\delta$$_{1}$ $\cup$ $\delta$$_{2}$ $\vdash$ $\varphi$$_{n+1}$,$\varphi$$_{n+1}$ $=$ $\varphi$.\\
+Lema 1: $\phi$ $\vdash$ $\varphi$ $\rightarrow$ $\neg$ $\psi$, $\Longrightarrow$ $\phi$ $\vdash$ $\psi$ $\rightarrow$ $\neg$$\varphi$.\\
+b) $\vdash$ $\varphi$ $\rightarrow$ $\psi$ $\rightarrow$ $\varphi$.\\
+c) $\vdash$ $\varphi$ $\rightarrow$ $\varphi$.\\
+d) $\vdash$ $\varphi$ $\rightarrow$ $\neg$$\neg$ $\varphi$.\\
+e) $\vdash$ $\psi$ $\rightarrow$ $\neg$$\psi$ $\rightarrow$ $\varphi$.\\
+Prova Item a).\\
+
+Prova item b)\\
+Por (A4), $\vdash$$\psi$ $\land$$\neg$$\varphi$ $\rightarrow$ $\neg$$\varphi$. Por a), $\vdash$ $\varphi$ $\rightarrow$ $\neg$($\psi$ $\land$ $\neg$$\varphi$)\footnote{rever o item b da prova }.  
+
+\end{proof} 
+\end{document}
