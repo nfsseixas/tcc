@@ -19,52 +19,204 @@
 \maketitle
 \tableofcontents
 \chapter{Lógica Modal.}
-  \section{Introdução.}
-     \hspace{0.5cm} Nesta seção apresentarei a lógica modal baseada na lógica proposicional. Mas primeiramente, o que é lógica modal? Lógica modal é o estudo das proposições modais e as relações lógicas entre elas. Proposições modais são proposições que enunciam a maneira com que o predicado convém ao sujeito. Exemplos de proposições modais:\\
-	\indent É possível que irá chover amanhã.\\
-	\indent É possível para seres humanos viajarem até marte.\\
-	\indent Necessariamente está(é necessário que esteja) chovendo aqui agora ou não.\\
-       \indent Usarei aqui os dois operadores modais necessidade e possibilidade. Quando uma asserção usa o operador da necessidade, ela é necessariamente verdadeira, ou seja, não existe um mundo, situação ou estado em que ela seja falsa. Por outro lado , uma asserção pode ser possível, ou seja, existe pelo menos um mundo,  situação ou estado em que a asserção é verdadeira e podendo haver outras em que ela seja falsa. \\
-       \indent  O operador modal da necessidade aqui será o $\Box$, logo sendo uma fórmula $\varphi$, $\Box$$\varphi$ é uma nova fórmula que se lê $\varphi$ necessário, cuja fórmula é necessariamente verdadeira. O operador modal para possibilidade é o $\Diamond$, daí seguindo o mesmo raciocínio, temos $\Diamond$$\varphi$ como uma nova fórmula tal que a asserção possui leitura $\varphi$ possível.\\
-     \indent A lógica modal serve como base para outras lógicas, e consequentemente, possui interpretações diferentes para os símbolos modais já determinados,  ou como em alguns casos, um acréscimo de seus operadores modais. Cito aqui alguns exemplos para lógicas com base na lógica modal:\\
-         \indent Lógica temporal, que é uma lógica que representa a veracidade das proposições com o passar do tempo, ou seja, uma asserção pode ser sempre verdadeira no futuro, ou alguma vez no futuro. A saber, temos o operador $\Box$, como o representante de “sempre no futuro” e o operador $\Diamond$ como o operador de “alguma vez no futuro” \\
-       \indent Lógica doêntica, que é a lógica conhecida como lógica das obrigações e permissões. Neste caso, temos o operador modal $\Box$ representando uma asserção obrigatória, e temos o operador $\Diamond$ representando a asserção que é permitida.\\
-          \indent A lógica epistêmica, também conhecida como a lógica do conhecimento, é uma lógica em que os símbolos modais são interpretados da seguinte forma: $\Box$ representa a asserção que é conhecida, ou seja, um agente i sabe $\varphi$, que tem expressão na forma de $\Box$$_{i}$$\varphi$. Similarmente, um agente i acredita  em $\varphi$, cuja expressão equivale a $\Diamond$$_{i}$$\varphi$. Os símbolos modais  $\Box$ e $\Diamond$ costumeiramente são substituídos por K e B respectivamente. K vem do inglês Knowledge (conhecimento) e B de Belief (crença,acreditar).\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sintaxe.}
-    \hspace{0.5cm} Agora vou introduzir a sintaxe usada pela lógica modal proposicional. Irei fazê-lo em dois passos: o primeiro é a definição do alfabeto e depois, a linguagem modal induzida pelo alfabeto modal sobre o conjunto P.\\
-              \indent Seja P um conjunto não-vazio de fórmulas atômicas que pode ser  finito para um n qualquer tal que P = {p$_{1}$,p$_{2}$,p$_{3}$,...,p$_{n}$} ou infinito tal que P = \{ p$_{i}$,p$_{i+1}$,...\}, para i $\geq$ 1, sendo que o mais importante é que os membros de P possam ser enumerados. Então temos como sintaxe da lógica modal:\\
+    \hspace{0.5cm} Agora vou introduzir a sintaxe usada pela lógica modal proposicional. Irei fazê-lo em dois passos: o primeiro é a definição do alfabeto modal e depois, a linguagem modal induzida pelo alfabeto modal sobre o conjunto P.\\
+              \indent Seja P um conjunto não-vazio de fórmulas atômicas que pode ser  finito para um n qualquer tal que P = \{p$_{1}$,p$_{2}$,p$_{3}$,...,p$_{n}$\} ou infinito tal que P = \{ p$_{i}$,p$_{i+1}$,...\}, para i $\geq$ 1, sendo que o mais importante é que os membros de P possam ser enumerados. Então temos como sintaxe da lógica modal:\\
 \indent (1) Qualquer que seja p$_{i}$, tal que p$_{i}$ $\in$ P, para  i $\geq$ 1.\\
 \indent (2) O simbolo da contradição $\perp$.\\
 \indent (3) Operadores lógicos binários : $\rightarrow$,$\vee$,$\land$, sendo implicação, disjunção e conjunção respectivamente.\\
 \indent (4) Os operadores modais $\Box$(necessidade) e $\Diamond$(possibilidade).\\
 \indent (5) Os símbolos auxiliares (,).\\
 \indent (6) Operador unário de negação $\neg$.\\
-             \indent Agora apresento a definição da linguagem modal induzida pelo alfabeto modal, sobre o conjunto de fórmulas atômicas P. Seja FormM o cojunto de fórmulas da lógica modal, temos: \\
-\indent (1) p$_{i}$ $\in$ FormM para qualquer pi $\in$ P,  i $\geq$ 1.\\
-\indent (2) $\perp$ $\in$ FormM.\\
-\indent (3) Seja as fórmulas: ($\varphi$ $\rightarrow$ $\varphi$'), ($\varphi$ $\land$ $\varphi$'), ($\varphi$ $\vee$ $\varphi$), $\Box$$\varphi$, $\Diamond$$\varphi$. Todas essas fórmulas pertencem a FormM, quaisquer que sejam $\varphi$, $\varphi$'.\\ 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Semantica%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+             \indent Agora apresento a definição da linguagem modal, induzida pelo alfabeto modal sobre o conjunto de fórmulas atômicas P. Seja FormM o cojunto mínimo de fórmulas da lógica modal, FormM satisfaz as seguintes propriedades : \\
+\indent (7) p$_{i}$ $\in$ FormM para qualquer pi $\in$ P,  i $\geq$ 1.\\
+\indent (8) $\perp$ $\in$ FormM.\\
+\indent (9) Se $\varphi$,$\varphi$' $\in$ FormM, então as fórmulas: ($\varphi$ $\rightarrow$ $\varphi$'), ($\varphi$ $\land$ $\varphi$'), ($\varphi$ $\vee$ $\varphi$), $\Box$$\varphi$, $\Diamond$$\varphi$ $\in$ FormM.\\
+\indent (10) Se $\varphi$,$\varphi$' $\in$ FormM, então as fórrmulas ($\Box$$\varphi$), ($\Diamond$$\varphi$),($\neg \varphi$) $\in$ FormM.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Semantica%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Semântica.}
- \hspace{0.5cm}  Primeiramente irei apresentar o modelo de kripke para apresentar a semântica. Um modelo de Krikpe é uma tupla representada por (S,$\Pi$,R) onde:\\
-\indent S é um conjunto não-vazio de estados ou mundos ou situações. Aqui tratarei como estados.\\
-\indent $\Pi$ é uma função que atribui verdade ou falso para os átomos por estado. Aqui trataremos verdade ou falso como v ou f respectivamente.\\
-\indent S $\rightarrow$ (p $\rightarrow$ (v,f)).\\
-\indent R: Relacionamento ou possibilidades entre os estados. Seja Ri $\subseteq$ SxS onde (i=1,...,m).\\
-           \indent Um mundo de kripke w consiste em uma tupla representada por um modelo de kripke e um estado s. O termo (s,t) $\in$ R$_{i}$ é interpretado da seguinte forma: Em um mundo (M,s), o agente i considera o mundo (M,t) como um mundo possível. A relação entre s e t será tratada aqui como R(s,t).\\
- \indent Seja um mundo w = (M,s), s $\in$ S. A representação da satisfação de $\varphi$ $\in$ FormM por um mundo w, é denotado por:\\
+ \hspace{0.5cm} Para representar a semântica da lógica modal é necessário representar o modelo de Kripke. Mas para isso, preciso introduzir noções de enquadramento.\\
+ \indent Um enquadramento E é representado por uma tupla E = (S,R), onde:\\
+ \indent S é um conjunto não-vazio de estados.\\
+ \indent R é uma relação binária entre os estados. Quando um estado s se relaciona com outro estado s', denotamos a relação como R(s,s').\\
+ \indent Seja V uma função que valora as variáveis nos estados, ela é denotada por:\\
+ \indent V: S $\rightarrow $ (P $\rightarrow $  \{1,0\}), onde P é o conjunto das fórmulas atômicas, 1 representa a valoração verdade, e 0 a valoração falsa. S é o conjunto de estados do enquadramento.\\
+ \indent Um modelo de Kripke é denotado por M = (E,V), onde E é um enquadramento e V uma função que atribui 1 ou 0 para as fórmulas nos estados. Um modelo de Kripke nada mais é do que uma estrutura de interpretação para fórmulas da lógica modal. Um mundo de kripke w, é a composição de um modelo de kripke M, com um estado s $\in$ S e S $\subseteq$ M. Basicamente é o mesmo que especificar um único estado de um modelo. Um estado, a depender da lógica modal, pode ser interpretado como um mundo, ou situação. Aqui eu tratarei como estado.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{Satisfatibilidade em um estado.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Seja M um modelo de Kripe tal que M = (E,V) e s $\in$ S, S $\subseteq$ E. A satisfatibilidade de uma formula $\varphi$, $\varphi \in$ FormM, é denotada por :
  \begin{quote}
- \indent M,s $\vDash$ $\varphi$\\
+ \indent M,s $\vDash$ $\varphi$
  \end{quote}
  e segui-se indutivamente as definições:\\
-\indent (1) M,s $\vDash$ p $\leftrightarrow$ $\Pi$(s)(p) = v para p $\in$ P.\\
-\indent (2) M,s $\vDash$ $\varphi$ $\land$ $\varphi$' $\leftrightarrow$ M,s $\vDash$ $\varphi$ e M,s $\vDash$ $\varphi$'.\\
-\indent (3) M,s $\vDash$ $\varphi$ $\vee$ $\varphi$' $\leftrightarrow$ M,s $\vDash$ $\varphi$ ou M,s $\vDash$ $\varphi$'.\\
-\indent (4) M,s $\vDash$ $\varphi$ $\rightarrow$ $\varphi$' $\leftrightarrow$ M,s $\nvDash$  $\varphi$ e M,s $\vDash$ $\varphi$' \footnote{definição alternativa: se M,s $\vDash$ $\varphi$, então M,s $\vDash$ $\varphi$'}. \\
-\indent (5) M,s $\vDash$ $\neg$ $\varphi$ $\leftrightarrow$ M,s $\nvDash$ $\varphi$.\\
-\indent (6) M,s $\vDash$ $\Box$ $\varphi$ se para cada M,t $\vDash$ $\varphi$, para t $\in$ S tal que 
-R(s,t).\\
-\indent (7) M,s $\vDash$ $\Diamond$$\varphi$ se existe t, tal que M,t $\vDash$ $\varphi$ e R(s,t).\footnote{Quando digo R(s,t), afirmo que há uma relação de possibilidade do mundo s ao mundo t considerada pelo agente em questão}.\\
-\indent (8) M $\vDash$ $\varphi$ se M,s $\vDash$ $\varphi$ para todo s $\in$ S. Dizemos que M é um modelo para $\varphi$.\\
-\indent (9) $\vDash$ $\varphi$ ($\varphi$ é válido) se M $\vDash$ $\varphi$ para todo M.\footnote{Para todo os modelos de Kripke.}\\
+\indent (1) M,s $\vDash$ p :$\Leftrightarrow$ V(s)(p) = 1 para p $\in$ P, ou seja, Uma fórmula é satisfeita em um estado se somente se, a valoração da fórmula naquele estado é 1.\\
+\indent (2) M,s $\vDash$ $\varphi$ $\land$ $\varphi$' :$\Leftrightarrow$ M,s $\vDash$ $\varphi$ e M,s $\vDash$ $\varphi$'. A valoração de $\varphi$ em s é igual a 1, bem como a valoração de $\varphi$'.\\
+\indent (3) M,s $\vDash$ $\varphi$ $\vee$ $\varphi$' :$\Leftrightarrow$ M,s $\vDash$ $\varphi$ ou M,s $\vDash$ $\varphi$'.\\
+\indent (4) M,s $\vDash$ $\varphi$ $\rightarrow$ $\varphi$' :$\Leftrightarrow$ M,s $\nvDash$  $\varphi$ e M,s $\vDash$ $\varphi$' \footnote{definição alternativa: se M,s $\vDash$ $\varphi$, então M,s $\vDash$ $\varphi$'}. \\
+\indent (5) M,s $\vDash$ $\neg$ $\varphi$ :$\Leftrightarrow$ M,s $\nvDash$ $\varphi$. Essa definição nos faz pensar no fato: M,s $\models \varphi \Leftrightarrow$  M,s $\nvDash \varphi'$, que é verdade, porém tem que ser demonstrado antes de fazer parte de uma prova.\\
+\indent (6) M,s $\vDash$ $\Box$ $\varphi$ se para cada t $\in$ S tal que 
+R(s,t), M,t $\vDash$ $\varphi$ . Veja que não necessariamente M,s $\models \varphi$ para que M,s $\models \square  \varphi$ \\
+\indent (7) M,s $\vDash$ $\Diamond$$\varphi$ se existe t, tal que M,t $\vDash$ $\varphi$ e R(s,t)\footnote{Quando digo R(s,t), afirmo que há uma relação de acessibilidade do estado s ao estado t considerado pelo agente em questão.}.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Satisfatibilidade em um modelo de Kripke.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{0.5cm} Seja M, um modelo de Kripke tal que M = (E,V). M satisfaz uma fórmula $\varphi$, $\varphi \in$ FormM, denotada por :
+ \begin{quote}M $\vDash$ $\varphi$ 
+ \end{quote}
+ se M,s $\vDash$ $\varphi$ para todo s $\in$ S, S $\subseteq$ E, ou seja, $\varphi$ tem valoração 1 em todos os estados daquele modelo de Kripke. Dizemos que M é um modelo para $\varphi$.\\
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{Exemplo para satisfatibilidade em um estado.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{0.5cm} Seja as fórmulas atômicas \{x,y,z\} $\subseteq $ P. Considere um modelo de Kripke M tal que:\\
+S = s$_{1}$,s$_{2}$,s$_{3}$,s$_{4}$,s$_{5}$.\\
+R é uma relação tal que 1 $\leq $ i,j $\leq$ 5, s$_{i}$Rs$_{j}$ se j = i+1.\\
+V(s$_{2}$)(x) = 1. \\
+V(s$_{3}$)(x) = 1. \\
+Para todo s$_{i}\in$ S, $\pi$(s$_{i}$)(y) = v, para i = 1,2,3,4,5.\\
+V(s$_{2}$)($\neg$z) = 1.\\
+Sejam as relações entre os estados:\\
+s$_{1}$ R s$_{2}$\\
+s$_{2}$ R s$_{3}$\\
+s$_{3}$ R s$_{4}$\\
+s$_{4}$ R s$_{5}$\\    
+segue-se que:\\
+(1) M,s$_{2}$ $\models$ x $\wedge$ ($\neg$z), pois M,s$_{2}$ $\models$ x, e M,s$_{2}$ $\models$ ($\neg$z).\\
+(2) M,s$_{1}$ $\models$ $\square$ x, pois M,s$_{2}$ $\models$ x, e ele é o único estado que se relaciona com s$_{1}$, logo a afirmação procede.\\
+(3) M,s$_{2}$ $\models$ $\square$ x. É similar ao anterior, porém no estado s$_{2}$, o estado possível considerado por um agente é o s$_{3}$. Tornando a única relação apartir de s$_{2}$, seguindo a definição 6 da seção 1.3.\\
+(4) M,s$_{3}$ $\nvDash$ $\square$ x, pois M,s$_{4}$ $\nvDash$ x.\\
+(5) M,s$_{1}$ $\nvDash$ ($\square$ x) $\rightarrow$ x, pois M,s$_{1}$ $\models$ $\square$ x porém M,s$_{1}$ $\nvDash$ x.\\
+(6) M,s$_{1} \models   \Diamond (\square$ x) pois M,$s_{2} \models (\square$ x) e pela definição 7 da seção 1.3, basta que exista um estado que satisfaça a fórmula x.\\
+(7) M,s$_{1}\Diamond$ (x $\wedge (\neg$ z)) pois M,s$_{2} \models$ x e M,s$_{2} \models \neg$ z.\\
+(8) M,s$_{5} \nvDash \Diamond$ ($\neg$z). Teria que haver um estado s $\in $ S tal que s$_{5}$Rs ou seja, uma relação R(s$_{5}$,s).\\
+(9) M,$s_{i}\models$ y. Pois para todo s$_{i}\in$ S, V(s$_{i}$)(y) = v, para i = 1,2,3,4,5.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{Classes de enquadramentos}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Seja $\varepsilon$ a classe de todos os enquadramentos. Temos as seguintes subclasses de enquadramento:\\
+ $\varepsilon _{reflexivo}$ é a classe dos enquadramentos reflexivos. Ou seja, $\forall$ s $\in$ S, temos R(s,s).\\
+ $\varepsilon _{transitivo}$ é a classe dos enquadramentos transitivos. $\forall$ s, t ,u $\in$ S, se  R(s,t) e R(t,u), então R(s,u).\\
+ $\varepsilon _{simetrico}$ é a classe dos enquadramentos simétricos. $\forall$ s, t, $\in$ S, se  R(s,t) então R(t,s).\\
+ $\varepsilon _{euclidiano}$ é a classe dos enquadramentos euclidianos. $\forall$ s, t, u, $\in$ S, se  R(s,t) e R(s,u), então R(t,u).\\
+ $\varepsilon _{serial}$ é a classe dos enquadramentos seriais. $\forall$ s, s $\in$ S, $\exists$ t, t $\in$ S, tal que R(s,t).\\
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Classe de modelos de kripke.}
+ \hspace{0.5cm} Defino $\Theta$ como a representação da classe de modelos de kripke, ou seja, a classe de interpretações para enquadramentos E.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \subsection{Validade em um estado.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Seja M um modelo de Kripke, E um enquadramento modal, $\varphi$ uma fórmula tal que $\varphi \in$ FormM. $\varphi$ é válida em um estado s, tal que s $\in$ S, S $\subseteq$ E, denotada por 
+ \begin{quote}
+ E,s $\models \varphi$,
+ \end{quote}
+ se M,s $\models \varphi$ para todos os modelos de Kripke M, tal que o enquadramento permaneça constante, ou seja, qualquer modelo de kripke baseado neste enquadramento E.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{Exemplo para validade em um estado.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Seja o enquadramento modal fixo E, uma fórmula $\varphi$, $\varphi \in $ FormM, que possui as seguintes relações e estados:\\
+ S = \{s$_{1}$, s$_{2}$, s$_{3}$, s$_{4}$\}.\\
+ s$_{1}$Rs$_{2}$.\\
+ s$_{2}$Rs$_{3}$.\\
+ s$_{3}$Rs$_{4}$.\\
+ s$_{4}$Rs$_{1}$.\\
+ Sejam as valorações V$_{1}$:\\
+ V$_{1}$(s$_{1}$)($\varphi$) = 0;\\
+ V$_{1}$(s$_{2}$)($\varphi$) = 1;\\
+ V$_{1}$(s$_{3}$)($\varphi$) = 0;\\
+ V$_{1}$(s$_{4}$)($\varphi$) = 0;\\
+ Seja M$_{1}$ um modelo de Kripe tal que M$_{1}$ = (E,V$_{1}$). Sejam as valorações V$_{2}$:\\
+ V$_{2}$(s$_{1}$)($\varphi$) = 1;\\
+ V$_{2}$(s$_{2}$)($\varphi$) = 1;\\
+ V$_{2}$(s$_{3}$)($\varphi$) = 0;\\
+ V$_{2}$(s$_{4}$)($\varphi$) = 0;\\
+ Seja M$_{2}$ um modelo de Kripe tal que M$_{2}$ = (E,V$_{2}$). Sejam as valorações V$_{3}$:\\
+ V$_{3}$(s$_{1}$)($\varphi$) = 0;\\
+ V$_{3}$(s$_{2}$)($\varphi$) = 1;\\
+ V$_{3}$(s$_{3}$)($\varphi$) = 1;\\
+ V$_{3}$(s$_{4}$)($\varphi$) = 0;\\
+ Seja M$_{3}$ um modelo de Kripe tal que M$_{3}$ = (E,V$_{3}$). Seja $\Theta$ a classe dos modelos de Kripke e suponha que $ \Theta$ = \{M$_{1}$,M$_{2}$,M$_{3}$\}. Observe que para todos os modelos de Kripke baseados em E, M$_{x}$,s$_{2} \models \varphi$, para x = 1,2,3.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{Validade de uma fórmula.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Seja uma fórmula $\varphi, \varphi \in$ FormM. Uma fórmula é valida, sendo denotada por
+ \begin{quote}
+ $\vDash$ $\varphi$ ($\varphi$ é válido) 
+ \end{quote}
+ se M $\vDash$ $\varphi$ para todo M.\footnote{Para todo os modelos de Kripke.}\\ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{ Consequência lógica Local.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Sejam $\Psi$ um conjunto de fórmulas tal que $\Psi \subseteq $ FormM , $\varphi$, tal que $\varphi \in$ FormM, M um modelo de Kripke dado por M = (E,V), $\Vdash $ o símbolo da consequência lógica, 
+ \begin{quote}
+ $\varphi$ é consequência lógica local de $\Psi$, denotado por $\Psi \Vdash_{l} \varphi $, onde $_{l}$ representa local,
+ \end{quote}
+ se para todo s, tal que s $\in$ S, se M,s $\models \Psi $, então M,s $\models \varphi $. Essa definição atende apenas para um único modelo de Kripke.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \subsection{Consequência lógica Global.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \hspace{0.5cm} Seguindos as mesmas configurações da seção anterior para M,$\varphi , \Psi $ e s:
+ \begin{quote}
+  \hspace{0.5cm} $\varphi$ é consequência lógica global de $\Psi$, denotado por $\Psi \Vdash \varphi $,
+  \end{quote}
+  se para todo modelo de Kripke M, se M $\models \Psi$ então M $\models \varphi $. 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{ Exemplo para consequência lógica global.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{quote}
+   $\varphi \Vdash \square \varphi $.
+   \end{quote}
+   Prova. Por hipótese temos que:\\
+   Qualquer que seja M, M $\models \varphi $ implica que M $\models \square \varphi $;\\
+   Isso equivale a : se M,s $\models \Psi$ então M,s $\models \square \varphi$. Para todo s, s $\subseteq $ S, S $\subseteq $ M;\\
+   Logo para todo t, tal que R(s,t), t $\subseteq $ S, M,t $\models \varphi $.\\
+   Concluindo, M $\models \square \varphi $.
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \subsection{ Exemplo para consequência lógica local.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{quote}
+   $ \{ \square (\varphi \rightarrow \varphi'), \Diamond \varphi \} \Vdash_{l}  \Diamond \varphi'$.
+  \end{quote}
+  Prova. Se M,s $\models \square (\varphi \rightarrow \varphi' )$ e M,s $ \models \Diamond \varphi $ então M,s $\models \Diamond \varphi $ para todo s $\in $ S.\\
+  Por contradição, suponha que M,s $\nvDash \Diamond \varphi'$. Isso implica que: Qualquer que seja t, tal que R(s,t), t $\in$ S, M,t $\nvDash \varphi' $. Daí temos que:\\
+  M,s $\models \square (\varphi \rightarrow \varphi ')$ e M,s $\models \Diamond \varphi $ por hipótese.\\
+  Logo existe t, tal que M,t $\models \varphi $, R(s,t) para que M,s $\models \Diamond \varphi$. E como para todo t, tal que R(s,t), M,t $\nvDash \varphi '$, logo M,s $\nvDash \square (\varphi \rightarrow \varphi')$. Contradição! Logo se M,s $\models \square (\varphi \rightarrow \varphi' )$ e M,s $ \models \Diamond \varphi $ então M,s $\models \Diamond \varphi $ para todo s $\in $ S.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIM DO CÁPITULO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Novo capitulo%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Sistemas Axiomáticos Modais.}   
+\hspace{0.5cm} Para apresentar sistemas axiomáticos modais, preciso definir conceitos para a definição do sistema axiomático K, que é o mais básico dos sistemas aximáticos e que representa a interseção de todos os outros sistemas axiomáticos. 
+\subsection{Derivação.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{0.5cm}Sejam $\vdash$ o símbolo da derivação, $\Psi$ um conjunto de fórmulas tal que $\Psi\subseteq$ FormM e $\varphi_{1},...,\varphi_{n} \in \Psi$, se $\Psi \vdash \varphi$( psi deriva phi) então $\varphi$ é um axioma, ou $\varphi \in \Psi$ ou $\chi \in \Psi$, $\chi \rightarrow \varphi \in \Psi$ e $\varphi$ é obtida por meio da regra de inferência modus ponens.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fórmulas modais atômicas.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{0.5cm} Seja PA o conjunto das fórmulas proposicionalmente atômicas, PA é definido por:\\
+PA = P $\cup$ \{$\square \varphi $ : $\varphi \in $FormM\} $\cup $ \{$\Diamond \varphi $: $\varphi \in $ FormM \}\\
+\indent Os elementos do conjunto PA podem ser vistos como um conjunto de símbolos proposicionais e sendo assim, fazem parte da linguagem proposicional. Desse modo, podemos substituir por seus elementos, variáveis dos axiomas da lógica proposicional, a exemplo de $\square \varphi \rightarrow (\psi \rightarrow \square \varphi )$ que é uma instancia do axioma $ \varphi \rightarrow (\psi \rightarrow  \varphi )$.
+\subsection {Regras de inferência.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{0.5cm} Seja $\Phi\subseteq $ FormM, $\Phi$ é fechado para o modus ponens se:\\
+$\varphi \rightarrow \varphi ' \in \Phi $ e $\varphi \in \Phi $, então $\varphi '\in \Phi $.\\
+\indent O conjunto $\Phi \subseteq $ FormM é fechado para a regra de inferência necessitação(do inglês necessitation):\\
+Se $\varphi \in \Phi $ então $\square \varphi \in  \Phi $.
+\subsection{Sistema K.}
+\hspace{0.5cm} O sistema axiomático K é definido por:\\
+K1: Todos os axiomas da lógica proposicional.\\
+K2: $\square (\varphi \rightarrow \psi )\rightarrow (\square \varphi \rightarrow \square \psi )$. \\
+\indent O sistema K é fechado para as regras de necessitação e modus ponens, podendo derivar ou instanciar fórmulas através dos axiomas da lógica proposicional.
+\subsection{Sistema T.}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hspace{0.5cm} O sistema T é uma extensão do sistema K com a adição do axioma:\\
+T1: $\square \varphi \rightarrow \varphi $.\\
+o que representa a classe dos enquadramentos reflexivos, ou seja, o axioma é válido somente para enquadramentos cuja relação possui a propriedade reflexiva.\\
+Prova. Por contradição, suponha que $\square \varphi \rightarrow \varphi $ não é válido, ou seja, existe um modelo de kripke M, e um estado s, s$ \subseteq $ S, S $\subseteq $ E, E = ( S,R), R com propriedade reflexiva, tal que M,s $\models \square \varphi $ e M,s $\nvDash \varphi $. Para que M,s $\models \square \varphi $, então para todo s', tal que R(s,s'), M,s'$\models \varphi $. Mas como a relação R é reflexiva, então s = s', logo M,s $\models \varphi $ para todo s, o que é uma contradição pois, por hipótese, M,s $\nvDash \varphi $. De outra mão, o axioma T1 não é válido para modelos de kripke cujo enquadramento não possua relação reflexiva. Suponha um modelo de kripke M' = (E',V'), onde E' não possui relacionamento reflexivo. Seja um estado s, s $\in $ S' ta que M',s'$\nvDash \varphi $ e para todo t, tal que R(s,t), M',t $\models \varphi $. Logo tem-se que M',s$\models \square \varphi $ e M',s $\nvDash \varphi $. O que mostra que $\square \varphi \rightarrow \varphi $ não é válido.
+\subsection{Sistema S4.}
+\hspace{0.5cm} O sistema S4 é composto pelo axioma:\\
+S4: $\square \varphi \rightarrow \square \square \varphi  $ \\
+e pelo sistema T. Se uma fórmula é necessariamente verdadeira, então necessariamente, ela é necessariamente verdadeira. Esse axioma caracteriza a classe dos enquadramentos transitivos. Agora vou mostrar que para qualquer que seja o modelo de kripke cujo enquadramento possui a relação de propriedade transitiva, o axioma S4 é válido.\\
+Prova.Sejam os estados s,s',s'' $\in$ S, S $\subseteq $ M, M qualquer. Sejam os seguintes relacionamentos: R(s,s') , R(s',s'') e pela propriedade da transitividade, R(s,s''). Por contradição, suponha que $\square \varphi \rightarrow \square \square \varphi  $ não é válida, logo existe a seguinte configuração: M,s $\models \square \varphi $ e M,s $\nvDash \square \square \varphi $. Se M,s $\models \square \varphi $, então para todo s' tal que R(s,s', M,s'$\models \varphi $. E pela suposição contraditória, M,s $\nvDash \square \square \varphi $, então M,s''$\nvDash \varphi $. Mas aí, temos a contradição, pois se M,s''$\nvDash \varphi $, então M,s $\nvDash \square \varphi $. Veja que por outro lado, esse axioma não é valido em modelos cujos enquadramentos não possuem a propriedade transitiva. Sejam s,s',s'' $\in$ S, S $\subseteq $ E, E um enquadramento que não possui propriedade transitiva. Sejam as seguintes relações: R(s,s') e R(s',s''). Sejam as seguintes interpretações: M,s $\models \square \varphi $ e M,s $\nvDash \square \square \varphi $. Daí temos que para todo s', tal que R(s,s'), M,s' $\models \varphi $ e que M,s'' $\nvDash  \varphi $. Logo, fica claro que M,s $\nvDash \square \square \varphi $, e que portanto, o axioma não é válido para enquadramentos que não sejam transitivos.
+\subsection{ Sistema S5.}
+\hspace{0.5cm} O sistema axiomático S5 é composto pelo sistema S4 e pelo axioma:\\
+S5: $\Diamond \square \varphi \rightarrow \varphi $, \\
+e caracteriza a classe dos enquadramentos simétricos. Prova. Seja um modelo de Kripke M qualquer, tal que o enquadramento E possui  propriedade da simetria no relacionamento entre os estados. Sejam os estados s,s',s'' e os relacionamentos R(s,s') e R(s',s''). Por contradição, suponha que $\Diamond \square \varphi \rightarrow \varphi $ não é válido, ou seja, existe M,s $\models \Diamond\square  \varphi $ e M,s $\nvDash \varphi $. Mas aí temos que M,s'$\models \varphi $ para todo s' R(s,s') e M,s'' $\models \varphi $. Mas pela propriedade da simetria, existe a relação R(s'',s'), o que nos leva a uma contradição pois, se M,s' $\nvDash \square \varphi $ então M,s $\nvDash  \Diamond \square \varphi $.
+\indent É fácil verificar que o axioma não é válido em um enquadramento que não possui a propriedade simétrica. Usando o mesmo exemplo, se não há relacionamento simétrico entre os estados, principalmente por s, s', M,s $\models \Diamond \square \varphi $ e M,s$\nvDash \varphi $, mostrando que o axioma S5 não é valido para enquadramentos cuja propriedade simétrica no relacionamento não existe.
+
+
+   
+   
+
+  
 \end{document}

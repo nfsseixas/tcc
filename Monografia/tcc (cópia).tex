@@ -1,0 +1,95 @@
+\documentclass[12pt]{report}
+%--------------------Pacotes-------------------------------
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,color}
+\usepackage{amsthm,amsfonts}
+\usepackage{amssymb}
+%---------------------Definições----------------------------
+\setlength{\textwidth}{17 cm}
+\setlength{\textheight}{20 cm}
+\evensidemargin 0 cm
+\oddsidemargin 0 cm
+%\setlength\parskip{3 pt} 
+\linespread{1.0} 
+%------------------------------------------------------------
+\title{Onisciência Lógica.}
+\author{Nilton Flávio Sousa Seixas.}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Lógica Modal.}
+  \section{Introdução.}
+     \hspace{0.5cm} Nesta seção apresentarei a lógica modal baseada na lógica proposicional. Mas primeiramente, o que é lógica modal? Lógica modal é o estudo das proposições modais e as relações lógicas entre elas. Proposições modais são proposições que enunciam a maneira com que o predicado convém ao sujeito. Exemplos de proposições modais:\\
+	\indent É possível que irá chover amanhã.\\
+	\indent É possível para seres humanos viajarem até marte.\\
+	\indent Necessariamente está(é necessário que esteja) chovendo aqui agora ou não.\\
+       \indent Usarei aqui os dois operadores modais necessidade e possibilidade. Quando uma asserção usa o operador da necessidade, ela é necessariamente verdadeira, ou seja, não existe um mundo, situação ou estado em que ela seja falsa. Por outro lado , uma asserção pode ser possível, ou seja, existe pelo menos um mundo,  situação ou estado em que a asserção é verdadeira e podendo haver outras em que ela seja falsa. \\
+       \indent  O operador modal da necessidade aqui será o $\Box$, logo sendo uma fórmula $\varphi$, $\Box$$\varphi$ é uma nova fórmula que se lê $\varphi$ necessário, cuja fórmula é necessariamente verdadeira. O operador modal para possibilidade é o $\Diamond$, daí seguindo o mesmo raciocínio, temos $\Diamond$$\varphi$ como uma nova fórmula tal que a asserção possui leitura $\varphi$ possível.\\
+     \indent A lógica modal serve como base para outras lógicas, e consequentemente, possui interpretações diferentes para os símbolos modais já determinados,  ou como em alguns casos, um acréscimo de seus operadores modais. Cito aqui alguns exemplos para lógicas com base na lógica modal:\\
+         \indent Lógica temporal, que é uma lógica que representa a veracidade das proposições com o passar do tempo, ou seja, uma asserção pode ser sempre verdadeira no futuro, ou alguma vez no futuro. A saber, temos o operador $\Box$, como o representante de “sempre no futuro” e o operador $\Diamond$ como o operador de “alguma vez no futuro” \\
+       \indent Lógica doêntica, que é a lógica conhecida como lógica das obrigações e permissões. Neste caso, temos o operador modal $\Box$ representando uma asserção obrigatória, e temos o operador $\Diamond$ representando a asserção que é permitida.\\
+          \indent A lógica epistêmica, também conhecida como a lógica do conhecimento, é uma lógica em que os símbolos modais são interpretados da seguinte forma: $\Box$ representa a asserção que é conhecida, ou seja, um agente i sabe $\varphi$, que tem expressão na forma de $\Box$$_{i}$$\varphi$. Similarmente, um agente i acredita  em $\varphi$, cuja expressão equivale a $\Diamond$$_{i}$$\varphi$. Os símbolos modais  $\Box$ e $\Diamond$ costumeiramente são substituídos por K e B respectivamente. K vem do inglês Knowledge (conhecimento) e B de Belief (crença,acreditar).\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sintaxe.}
+    \hspace{0.5cm} Agora vou introduzir a sintaxe usada pela lógica modal proposicional. Irei fazê-lo em dois passos: o primeiro é a definição do alfabeto e depois, a linguagem modal induzida pelo alfabeto modal sobre o conjunto P.\\
+              \indent Seja P um conjunto não-vazio de fórmulas atômicas que pode ser  finito para um n qualquer tal que P = {p$_{1}$,p$_{2}$,p$_{3}$,...,p$_{n}$} ou infinito tal que P = \{ p$_{i}$,p$_{i+1}$,...\}, para i $\geq$ 1, sendo que o mais importante é que os membros de P possam ser enumerados. Então temos como sintaxe da lógica modal:\\
+\indent (1) Qualquer que seja p$_{i}$, tal que p$_{i}$ $\in$ P, para  i $\geq$ 1.\\
+\indent (2) O simbolo da contradição $\perp$.\\
+\indent (3) Operadores lógicos binários : $\rightarrow$,$\vee$,$\land$, sendo implicação, disjunção e conjunção respectivamente.\\
+\indent (4) Os operadores modais $\Box$(necessidade) e $\Diamond$(possibilidade).\\
+\indent (5) Os símbolos auxiliares (,).\\
+\indent (6) Operador unário de negação $\neg$.\\
+             \indent Agora apresento a definição da linguagem modal induzida pelo alfabeto modal, sobre o conjunto de fórmulas atômicas P. Seja FormM o cojunto de fórmulas da lógica modal, temos: \\
+\indent (7) p$_{i}$ $\in$ FormM para qualquer pi $\in$ P,  i $\geq$ 1.\\
+\indent (8) $\perp$ $\in$ FormM.\\
+\indent (9) Seja as fórmulas: ($\varphi$ $\rightarrow$ $\varphi$'), ($\varphi$ $\land$ $\varphi$'), ($\varphi$ $\vee$ $\varphi$), $\Box$$\varphi$, $\Diamond$$\varphi$. Todas essas fórmulas pertencem a FormM, quaisquer que sejam $\varphi$, $\varphi$'.\\ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Semantica%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Semântica.}
+ \hspace{0.5cm}  Primeiramente irei apresentar o modelo de kripke para apresentar a semântica. Um modelo de Krikpe é uma tupla representada por (S,$\Pi$,R) onde:\\
+\indent S é um conjunto não-vazio de estados ou mundos ou situações. Aqui tratarei como estados.\\
+\indent $\Pi$ é uma função que atribui verdade ou falso para os átomos por estado. Aqui trataremos verdade ou falso como v ou f respectivamente.\\
+\indent S $\rightarrow$ (p $\rightarrow$ (v,f)).\\
+\indent R: Relacionamento ou possibilidades entre os estados. Seja Ri $\subseteq$ SxS onde (i=1,...,m).\\
+           \indent Um mundo de kripke w consiste em uma tupla representada por um modelo de kripke e um estado s. O termo (s,t) $\in$ R$_{i}$ é interpretado da seguinte forma: Em um mundo (M,s), o agente i considera o mundo (M,t) como um mundo possível. A relação entre s e t será tratada aqui como R(s,t).\\
+ \indent Seja um mundo w = (M,s), s $\in$ S. A representação da satisfação de $\varphi$ $\in$ FormM por um mundo w, é denotado por:\\
+ \begin{quote}
+ \indent M,s $\vDash$ $\varphi$\\
+ \end{quote}
+ e segui-se indutivamente as definições:\\
+\indent (1) M,s $\vDash$ p $\leftrightarrow$ $\Pi$(s)(p) = v para p $\in$ P.\\
+\indent (2) M,s $\vDash$ $\varphi$ $\land$ $\varphi$' $\leftrightarrow$ M,s $\vDash$ $\varphi$ e M,s $\vDash$ $\varphi$'.\\
+\indent (3) M,s $\vDash$ $\varphi$ $\vee$ $\varphi$' $\leftrightarrow$ M,s $\vDash$ $\varphi$ ou M,s $\vDash$ $\varphi$'.\\
+\indent (4) M,s $\vDash$ $\varphi$ $\rightarrow$ $\varphi$' $\leftrightarrow$ M,s $\nvDash$  $\varphi$ e M,s $\vDash$ $\varphi$' \footnote{definição alternativa: se M,s $\vDash$ $\varphi$, então M,s $\vDash$ $\varphi$'}. \\
+\indent (5) M,s $\vDash$ $\neg$ $\varphi$ $\leftrightarrow$ M,s $\nvDash$ $\varphi$.\\
+\indent (6) M,s $\vDash$ $\Box$ $\varphi$ se para cada M,t $\vDash$ $\varphi$, para t $\in$ S tal que 
+R(s,t).\\
+\indent (7) M,s $\vDash$ $\Diamond$$\varphi$ se existe t, tal que M,t $\vDash$ $\varphi$ e R(s,t)\footnote{Quando digo R(s,t), afirmo que há uma relação de possibilidade do mundo s ao mundo t considerada pelo agente em questão}.\\
+\indent (8) M $\vDash$ $\varphi$ se M,s $\vDash$ $\varphi$ para todo s $\in$ S. Dizemos que M é um modelo para $\varphi$.\\
+\indent (9) $\vDash$ $\varphi$ ($\varphi$ é válido) se M $\vDash$ $\varphi$ para todo M.\footnote{Para todo os modelos de Kripke.}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%exemplos%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exemplo 1}
+\hspace{0.5cm} Seja as fórmulas atômicas \{x,y,z\} $\subseteq $ P. Considere um modelo de Kripke M tal que:\\
+S = s$_{1}$,s$_{2}$,s$_{3}$,s$_{4}$,s$_{5}$.\\
+R é uma relação tal que 1 $\leq $ i,j $\leq$ 5, s$_{i}$Rs$_{j}$ se j = i+1.\\
+$\pi$(s$_{2}$)(x) = v. \\
+$\pi$(s$_{3}$)(x) = v. \\
+Para todo s$_{i}\in$ S, $\pi$(s$_{i}$)(y) = v, para i = 1,2,3,4,5.\\
+$\pi$(s$_{2}$)($\neg$z) = v.\\
+Seja:\\ \\
+s1 $\Longrightarrow$ s$_{2}$ $\Longrightarrow$ s$_{3}$ $\Longrightarrow$ s$_{4}$ $\Longrightarrow$ s$_{5}$.\\
+\\ A representação das relações entre os estados. segue-se que:\\
+(1) M,s$_{2}$ $\models$ x $\wedge$ ($\neg$z), pois M,s$_{2}$ $\models$ x, e M,s$_{2}$ $\models$ ($\neg$z).\\
+(2) M,s$_{1}$ $\models$ $\square$ x, pois M,s$_{2}$ $\models$ x, e ele é o único estado que se relaciona com s$_{1}$, logo a afirmação procede.\\
+(3) M,s$_{2}$ $\models$ $\square$ x. É similar ao anterior, porém no estado s$_{2}$, o mundo possível considerado por um agente é o s$_{3}$. Tornando a única relação apartir de s$_{2}$, seguindo a definição 6 da seção 1.3.\\
+(4) M,s$_{3}$ $\nvDash$ $\square$ x, pois M,s$_{4}$ $\nvDash$ x.\\
+(5) M,s$_{1}$ $\nvDash$ ($\square$ x) $\rightarrow$ x, pois M,s$_{1}$ $\models$ $\square$ x porém M,s$_{1}$ $\nvDash$ x.\\
+(6) M,s$_{1} \models   \Diamond (\square$ x) pois M,$s_{2} \models (\square$ x) e pela definição 7 da seção 1.3, basta que exista um estado que satisfaça a fórmula x.\\
+(7) M,s$_{1}\Diamond$ (x $\wedge (\neg$ z)) pois M,s$_{2} \models$ x e M,s$_{2} \models \neg$ z.\\
+(8) M,s$_{5} \nvDash \Diamond$ ($\neg$z). Teria que haver um mundo s $\in $ S tal que s$_{5}$Rs ou seja, uma relação R(s$_{5}$,s).\\
+(9) M,$s_{i}\models$ y. Pois para todo s$_{i}\in$ S, $\pi$(s$_{i}$)(y) = v, para i = 1,2,3,4,5.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  
+\end{document}
